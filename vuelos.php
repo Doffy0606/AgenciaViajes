@@ -1,3 +1,4 @@
+```php
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -34,6 +35,9 @@
             <label for="fecha">Fecha del viaje:</label>
             <input type="date" id="fecha" name="fecha" required>
 
+            <label for="pasajeros">Cantidad de pasajeros:</label>
+            <input type="number" id="pasajeros" name="pasajeros" min="1" max="9" value="1" required>
+
             <button type="submit">Buscar vuelo</button>
 
         </form>
@@ -43,12 +47,14 @@
             $origen = htmlspecialchars($_POST["origen"]);
             $destino = htmlspecialchars($_POST["destino"]);
             $fecha = htmlspecialchars($_POST["fecha"]);
+            $pasajeros = htmlspecialchars($_POST["pasajeros"]);
 
             echo "<div class='resultado'>";
             echo "<h3>Datos de búsqueda</h3>";
             echo "<p>Origen: $origen</p>";
             echo "<p>Destino: $destino</p>";
             echo "<p>Fecha: $fecha</p>";
+            echo "<p>Pasajeros: $pasajeros</p>";
             echo "<p>La búsqueda se realizó correctamente.</p>";
             echo "</div>";
         }
@@ -62,3 +68,4 @@
 
 </body>
 </html>
+```
